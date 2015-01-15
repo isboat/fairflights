@@ -10,7 +10,8 @@ namespace FairFlights.Web
         {
             bundles.Add(new ScriptBundle("~/bundles/corelibs").Include(
                         "~/Scripts/Libs/jquery-{version}.js",
-                        "~/Scripts/Libs/angular.js"));
+                        "~/Scripts/Libs/angular.js",
+                        "~/Scripts/Libs/angular-route.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.unobtrusive*",
@@ -21,7 +22,7 @@ namespace FairFlights.Web
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
+            //bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
         }
     }
 }

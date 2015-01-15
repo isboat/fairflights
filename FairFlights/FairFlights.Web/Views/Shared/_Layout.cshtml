@@ -1,29 +1,29 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en" ng-app="ffApp">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
+    <link rel="stylesheet/less" type="text/css" href="@Url.Content("~/Content/stylesheet.less")" />
+    <script>
+        /*less = {
+            env: "development",
+            async: false,
+            fileAsync: false,
+            poll: 1000,
+            functions: {},
+            dumpLineNumbers: "comments",
+            relativeUrls: false
+        };*/
+    </script>
+    <script src="@Url.Content("~/Scripts/Libs/less.js")" type="text/javascript"></script>
+
     @Scripts.Render("~/bundles/corelibs")
 </head>
 <body>
-    <header>
-        <div class="content-wrapper">
-            <div class="float-left">
-                <p class="site-title">
-                    <a href="~/">ASP.NET Web API</a></p>
-            </div>
-            <div class="float-right">
-                <nav>
-                    <ul id="menu">
-                        <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
-                        <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
     @RenderBody()
-    </body>
+    
+    <script src="@Url.Content("~/Scripts/App/app.js")"></script>
+    <script src="@Url.Content("~/Scripts/App/searchController.js")"></script>
+</body>
 </html>

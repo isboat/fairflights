@@ -9,7 +9,7 @@ namespace FairFlights.Web
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/corelibs").Include(
-                        "~/Scripts/Libs/jquery-{version}.js",
+                        "~/Scripts/Libs/jquery.js",
                         "~/Scripts/Libs/angular.js",
                         "~/Scripts/Libs/angular-route.js"));
 

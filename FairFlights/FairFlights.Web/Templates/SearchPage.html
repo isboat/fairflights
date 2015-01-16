@@ -1,29 +1,95 @@
-﻿<div class="mainSearchForm">
-    <div class="formHeader">
-        <span> + Fill form</span>
-    </div>
-    <div class="formField">
-        <label>From</label>
-        <div>
-            <input type="text" placeholder="London City"/>
+﻿<div class="col-xs-2"></div>
+<div class="col-xs-8">
+    <div class="mainSearchForm">
+        <div class="formHeader">
+            <span> + Fill form</span>
         </div>
-    </div>
-    <div class="formField">
-        <label>To</label>
-        <div>
-            <input type="text" placeholder="New York City"/>
+        
+        
+        <form class="form-horizontal">
+        <div class="form-group has-success">
+            <label for="from" class="control-label col-xs-2">From</label>
+            <div class="col-xs-10">
+                <input type="text" class="form-control" id="from" placeholder="London city">
+            </div>
         </div>
-    </div>
-    <div class="formField">
-        <label>Depart</label>
-        <div>
-            <input type="text" placeholder="dd/mm/yy"/>
+        <div class="form-group has-warning">
+            <label for="to" class="control-label col-xs-2">To</label>
+            <div class="col-xs-10">
+                <input type="text" class="form-control" id="to" placeholder="London city">
+            </div>
         </div>
-    </div>
-    <div class="formField">
-        <label>Return</label>
-        <div>
-            <input type="text" placeholder="dd/mm/yy"/>
+        <div class="form-group has-error">
+            <label for="dDate" class="control-label col-xs-2">Depart</label>
+            <div class="col-xs-10">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default">Date</button>
+                    </span>
+                    <input type="text" class="form-control" placeholder="dd/mm/yy">
+                </div>
+            </div>
         </div>
+
+        <div class="form-group">
+            <div class="col-xs-offset-2 col-xs-10">
+                <div class="checkbox">
+                    <label><input type="checkbox">Return</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group has-success">
+            <label for="aDate" class="control-label col-xs-2">Arrive</label>
+            <div class="col-xs-10">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default">Date</button>
+                    </span>
+                    <input type="text" class="form-control" disabled="disabled" placeholder="dd/mm/yy">
+                </div>
+            </div>
+        </div>
+        <div class="form-group row has-warning">
+            <label for="aDate" class="control-label col-xs-2">Number</label>
+            <div class="col-xs-3">
+                <div class="input-group" title="12 + years">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                    <input type="text" class="form-control" value="1">
+                </div>
+                <span class="help-block">12+ years</span>
+            </div>
+            <div class="col-xs-3">
+                <div class="input-group" title="under 12 years">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                    <input type="text" class="form-control" value="0">
+                </div>
+                <span class="help-block">under 12 years</span>
+            </div>
+            <div class="col-xs-3">
+                <div class="input-group" title="under 2 years">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+                    <input type="text" class="form-control" value="0">
+                </div>
+                <span class="help-block">under 2</span>
+            </div>
+        </div>
+        <div class="form-group has-error">
+            <label for="aDate" class="control-label col-xs-2">Class</label>
+            <div class="col-xs-10">
+                <select class="classGroup">
+                    <option>Economy Class</option>
+                    <option>Premium Economy</option>
+                    <option>Business Class</option>
+                    <option>First Class</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-offset-2 col-xs-10">
+                <button type="submit" class="btn btn-success">View Price Graph</button>
+            </div>
+        </div>
+        </form>
     </div>
 </div>
+<div class="col-xs-2"></div>

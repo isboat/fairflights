@@ -11,7 +11,8 @@ namespace FairFlights.Web
             bundles.Add(new ScriptBundle("~/bundles/corelibs").Include(
                         "~/Scripts/Libs/jquery.js",
                         "~/Scripts/Libs/angular.js",
-                        "~/Scripts/Libs/angular-route.js"));
+                        "~/Scripts/Libs/angular-route.js",
+                        "~/Scripts/Libs/chart.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.unobtrusive*",

@@ -4,7 +4,7 @@ var ffApp = angular.module('ffApp', ['ngRoute']).config(function ($routeProvider
 
     $routeProvider.when('/view',
         {
-            templateUrl: 'Views/Home/view.html',
+            templateUrl: 'Templates/ViewGraph.html',
             controller: 'graphController'
         });
     

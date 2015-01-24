@@ -194,14 +194,18 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="Images\cloud.jpg" />
     <Content Include="Images\plane.png" />
     <Content Include="Images\plane_small.png" />
     <Content Include="Scripts\App\app.js" />
+    <Content Include="Scripts\App\graphController.js" />
     <Content Include="Scripts\App\searchController.js" />
+    <Content Include="Scripts\App\searchService.js" />
     <Content Include="Scripts\Libs\angular-route.js" />
     <Content Include="Scripts\Libs\angular.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\Libs\bootstrap.min.js" />
+    <Content Include="Scripts\Libs\chart.js" />
     <Content Include="Scripts\Libs\chosen.jquery.min.js" />
     <Content Include="Scripts\Libs\jquery.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -213,6 +217,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\Libs\less.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Templates\ViewGraph.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

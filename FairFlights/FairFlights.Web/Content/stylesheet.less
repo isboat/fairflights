@@ -1,13 +1,14 @@
 ﻿// variables
 @mainColor: #5882FA;
-@headerColor: #d3d3d3;
+@headerColor: #2E2E2E;
 html {
     margin: 0;
     padding: 0;
+	background: url(/Images/cloud.jpg) no-repeat;
 }
 
 body {
-    background-color: #fff;
+    background: none !important;
     //font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
     margin: 0;
     padding: 0;
@@ -17,7 +18,7 @@ body {
     background-color: @headerColor;
     height: 100px;
     padding-left: 20px;
-    border-bottom: 3px solid #aaa;
+    border-bottom: 3px solid #000;
     margin-bottom: 20px;
 
     .logo {
@@ -33,21 +34,28 @@ body {
     }
 }
 
+#main {
+	//position: relative;
+	//top: 100px;
+}
 .mainSearchForm {
     margin: 0 auto;
     width: 575px;
-    border: 1px solid #ccc;
+    // border: 1px solid #ccc;
     padding-bottom: 20px;
+	background-color: #FAFAFA;
 
     .formHeader {
-        background-color: @mainColor;
+        background-color: @headerColor;
         padding: 7px;
         color: #fff;
-        margin-bottom: 20px;
     }
 
     form {
         padding-right: 20px;
+		padding-top: 20px;
+		//border: 5px solid #F2F2F2
+		//border-top: none;
     }
 }
 

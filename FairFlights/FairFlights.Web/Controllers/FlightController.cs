@@ -8,6 +8,8 @@ namespace FairFlights.Web.Controllers
     using FairFlights.DomainServices.Interfaces;
     using FairFlights.ViewModels.Flight;
 
+    // http://partners.api.skyscanner.net/apiservices/browsedates/v1.0/GB/GBP/en-GB/LON/JFK/2015-02-03/2015-02-05?apiKey=prtl6749387986743898559646983194
+
     public class FlightController : ApiController
     {
         #region Private variables

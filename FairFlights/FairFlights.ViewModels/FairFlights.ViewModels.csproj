@@ -39,6 +39,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Flight\CarriersViewModel.cs" />
+    <Compile Include="Flight\CurrencyViewModel.cs" />
+    <Compile Include="Flight\DateViewModel.cs" />
+    <Compile Include="Flight\BoundLegViewModel.cs" />
+    <Compile Include="Flight\QuoteViewModel.cs" />
+    <Compile Include="Flight\RouteViewModel.cs" />
+    <Compile Include="Flight\PlaceViewModel.cs" />
     <Compile Include="Flight\SearchRequestViewModel.cs" />
     <Compile Include="Flight\SearchResponseViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

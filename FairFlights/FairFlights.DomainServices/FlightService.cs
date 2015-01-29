@@ -1,5 +1,7 @@
 ﻿namespace FairFlights.DomainServices
 {
+    using System.Collections.Generic;
+
     using FairFlights.Configuration;
     using FairFlights.DataConsumer;
     using FairFlights.DataConsumer.Interfaces;
@@ -49,9 +51,36 @@
                               InboundPartialDate = request.IsReturn ? request.ArrivalDate.ToString("dd/mm/yyyy") : string.Empty
                           };
 
-            //var data = this.dataConsumerManager.SearchFlight(req);
+            // var data = this.dataConsumerManager.SearchFlight(req);
 
-            var response = new SearchResponseViewModel();
+            var response = new SearchResponseViewModel
+                               {
+                                   Currencies = new List<CurrencyViewModel>
+                                                    {
+                                                        new CurrencyViewModel
+                                                            {
+                                                                Code = "GBP",
+                                                                Symbol = '£',
+                                                                ThousandsSeparator = ',',
+                                                                DecimalDigits = 2,
+                                                                DecimalSeparator = ',',
+                                                                SymbolOnLeft = true,
+                                                                SpaceBetweenAmountAndSymbol = false,
+                                                                RoundingCoefficient = 0
+                                                            }
+                                                    },
+                                   Places = new List<PlaceViewModel>
+                                                 {
+                                                     new PlaceViewModel
+                                                         {
+                                                             PlaceId = 40074,
+                                                             IataCode = "ABZ",
+                                                             CityName = "Aberdeen",
+                                                             CountryName = "United Kingdom",
+                                                             PlaceType = "Station"
+                                                         }
+                                                 }
+                               };
 
             //if (data != null)
             //{

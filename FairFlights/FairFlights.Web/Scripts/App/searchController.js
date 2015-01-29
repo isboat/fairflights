@@ -4,11 +4,10 @@ ffApp.controller('searchController', function searchController($rootScope, $scop
 
     $scope.Message = "Message from searchController";
 
-    $scope.IsReturn = false;
-
     $('.classGroup').chosen();
 
     $scope.FormData = {
+        IsReturn : false,
         OverTwelve: 1,
         UnderTwelve: 0,
         UnderTwo: 0,
@@ -18,9 +17,9 @@ ffApp.controller('searchController', function searchController($rootScope, $scop
     // public functions
     $scope.SubmitForm = function() {
         console.log($scope.FormData);
-        $location.path('/view');
-        /*flightService.SearchFlight(viewData).then(
-            function (data) {
+
+        flightService.SearchFlight($scope.FormData).then(
+            function(data) {
                 if (data) {
                     //redirect to graph page
                     $location.path('/view');
@@ -28,9 +27,9 @@ ffApp.controller('searchController', function searchController($rootScope, $scop
                     console.log(data);
                 }
             },
-            function (status) {
+            function(status) {
                 console.log(status);
             }
-        );*/
-    }
+        );
+    };
 });

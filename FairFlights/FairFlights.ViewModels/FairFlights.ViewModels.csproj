@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2A876335-ED6D-47BD-A187-E5CF9BE80B90}</ProjectGuid>
+    <ProjectGuid>{4ACE9806-3CB6-4592-BD7D-67F5ABE6CA48}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FairFlights.DomainServices</RootNamespace>
-    <AssemblyName>FairFlights.DomainServices</AssemblyName>
+    <RootNamespace>FairFlights.ViewModels</RootNamespace>
+    <AssemblyName>FairFlights.ViewModels</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,28 +39,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FlightService.cs" />
-    <Compile Include="Interfaces\IFlightService.cs" />
+    <Compile Include="Flight\SearchRequestViewModel.cs" />
+    <Compile Include="Flight\SearchResponseViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\FairFlights.DataConsumer\FairFlights.DataConsumer.csproj">
-      <Project>{35CB1CE6-2CFD-4F8E-83B3-94562EEEDCD9}</Project>
-      <Name>FairFlights.DataConsumer</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FairFlights.Configuration\FairFlights.Configuration.csproj">
-      <Project>{F8D435B4-8247-487D-A299-E37A00D85947}</Project>
-      <Name>FairFlights.Configuration</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FairFlights.DomainObjects\FairFlights.DomainObjects.csproj">
-      <Project>{A32000F8-5005-471D-8135-1D36967A2BB5}</Project>
-      <Name>FairFlights.DomainObjects</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FairFlights.ViewModels\FairFlights.ViewModels.csproj">
-      <Project>{4ACE9806-3CB6-4592-BD7D-67F5ABE6CA48}</Project>
-      <Name>FairFlights.ViewModels</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

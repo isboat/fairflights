@@ -2,7 +2,11 @@
 
 namespace FairFlights.Web.Controllers
 {
+    using System.Net;
+
+    using FairFlights.Configuration;
     using FairFlights.DomainServices.Interfaces;
+    using FairFlights.ViewModels.Flight;
 
     public class FlightController : ApiController
     {
@@ -14,13 +18,25 @@ namespace FairFlights.Web.Controllers
 
         #region Constructors
 
-        public FlightController(IFlightService flightService)
+        public FlightController()
         {
-            this.flightService = flightService;
+            this.flightService = IoC.GetInstance.Resolve<IFlightService>();
         }
         #endregion
 
-        public string SearchFlight()
+        [HttpPost]
+        public SearchResponseViewModel SearchFlight(SearchRequestViewModel viewModel)
+        {
+            if (viewModel != null)
+            {
+                return this.flightService.SearchFlight(viewModel);
+            }
+
+            throw new HttpResponseException(HttpStatusCode.BadRequest);
+        }
+
+        [HttpGet]
+        public string Search()
         {
             return "some string";
         }

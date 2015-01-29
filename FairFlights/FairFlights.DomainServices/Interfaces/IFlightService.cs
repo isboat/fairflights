@@ -1,6 +1,7 @@
 ﻿namespace FairFlights.DomainServices.Interfaces
 {
     using FairFlights.DomainObjects.Flight;
+    using FairFlights.ViewModels.Flight;
 
     /// <summary>
     /// The FlightService interface.
@@ -16,6 +17,6 @@
         /// <returns>
         /// The <see cref="SearchFlightResponse"/>.
         /// </returns>
-        SearchFlightResponse SearchFlight(SearchFlightRequest request);
+        SearchResponseViewModel SearchFlight(SearchRequestViewModel request);
     }
 }

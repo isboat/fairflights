@@ -34,7 +34,7 @@
         <div class="form-group">
             <div class="col-xs-offset-2 col-xs-10">
                 <div class="checkbox">
-                    <label><input type="checkbox" ng-model="IsReturn" ng-checked="IsReturn">Return</label>
+                    <label><input type="checkbox" ng-model="FormData.IsReturn" ng-checked="FormData.IsReturn">Return</label>
                 </div>
             </div>
         </div>
@@ -45,7 +45,7 @@
                     <span class="input-group-btn">
                         <button type="button" class="btn btn-default">Date</button>
                     </span>
-                    <input type="text" class="form-control" ng-disabled="!IsReturn" ng-model="FormData.ArrivalDate" placeholder="dd/mm/yy">
+                    <input type="text" class="form-control" ng-disabled="!FormData.IsReturn" ng-model="FormData.ArrivalDate" placeholder="dd/mm/yy">
                 </div>
             </div>
         </div>

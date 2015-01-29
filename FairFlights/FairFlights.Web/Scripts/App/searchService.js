@@ -11,20 +11,17 @@ ffApp.factory('flightService', function ($http, $q) {
             self.graphData = viewData;
 
             var deferred = $q.defer();
-            deferred.resolve(true);
-            /*
-            $http({ method: 'POST', url: url, data: JSON.stringify(viewData), dataType: 'json' })
+            
+            $http({ method: 'POST', url: "/api/Flight/SearchFlight", data: JSON.stringify(viewData), dataType: 'application/json',  headers: { 'Content-Type': 'application/json' } })
                 .success(function (data, status) {
                     self.graphData = data;
                     deferred.resolve(data);
                 })
                 .error(function (data, status) {
                     deferred.reject(status);
-                });*/
-
-            deferred.reject(false);
-
-            return deferred;
+                });
+            
+            return deferred.promise;
         }
     };
 

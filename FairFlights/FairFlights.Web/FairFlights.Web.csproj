@@ -201,6 +201,7 @@
     <Content Include="Scripts\App\graphController.js" />
     <Content Include="Scripts\App\searchController.js" />
     <Content Include="Scripts\App\searchService.js" />
+    <Content Include="Scripts\App\uiHelper.js" />
     <Content Include="Scripts\Libs\angular-route.js" />
     <Content Include="Scripts\Libs\angular.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
@@ -243,9 +244,17 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FairFlights.Configuration\FairFlights.Configuration.csproj">
+      <Project>{F8D435B4-8247-487D-A299-E37A00D85947}</Project>
+      <Name>FairFlights.Configuration</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FairFlights.DomainServices\FairFlights.DomainServices.csproj">
       <Project>{2A876335-ED6D-47BD-A187-E5CF9BE80B90}</Project>
       <Name>FairFlights.DomainServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FairFlights.ViewModels\FairFlights.ViewModels.csproj">
+      <Project>{4ACE9806-3CB6-4592-BD7D-67F5ABE6CA48}</Project>
+      <Name>FairFlights.ViewModels</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

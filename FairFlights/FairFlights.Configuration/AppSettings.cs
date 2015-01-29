@@ -13,7 +13,14 @@ namespace FairFlights.Configuration
             get
             {
                 return ConfigurationManager.AppSettings["skyScannerUri"];
+            }
+        }
 
+        public static string SkyScannerApiKey
+        {
+            get
+            {
+                return ConfigurationManager.AppSettings["skyScannerApiKey"];
             }
         }
 
@@ -22,7 +29,6 @@ namespace FairFlights.Configuration
             get
             {
                 return ConfigurationManager.AppSettings["wegoUri"];
-
             }
         }
     }

@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FairFlights.DomainServices"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FairFlights.Web", "FairFlights.Web\FairFlights.Web.csproj", "{196B590E-CA3E-44F5-A284-68382030837D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FairFlights.ViewModels", "FairFlights.ViewModels\FairFlights.ViewModels.csproj", "{4ACE9806-3CB6-4592-BD7D-67F5ABE6CA48}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{196B590E-CA3E-44F5-A284-68382030837D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{196B590E-CA3E-44F5-A284-68382030837D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{196B590E-CA3E-44F5-A284-68382030837D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ACE9806-3CB6-4592-BD7D-67F5ABE6CA48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ACE9806-3CB6-4592-BD7D-67F5ABE6CA48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ACE9806-3CB6-4592-BD7D-67F5ABE6CA48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ACE9806-3CB6-4592-BD7D-67F5ABE6CA48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -20,8 +20,14 @@ namespace FairFlights.DomainObjects.Flight
 
         public string DestinationPlace { get; set; }
 
+        /// <summary>
+        /// Gets or sets the departure date.
+        /// </summary>
         public string OutboundPartialDate { get; set; }
 
+        /// <summary>
+        /// Gets or sets the return date.
+        /// </summary>
         public string InboundPartialDate { get; set; }
     }
 }

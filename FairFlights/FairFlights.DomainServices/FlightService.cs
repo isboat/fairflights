@@ -5,6 +5,7 @@
     using FairFlights.DataConsumer.Interfaces;
     using FairFlights.DomainObjects.Flight;
     using FairFlights.DomainServices.Interfaces;
+    using FairFlights.ViewModels.Flight;
 
     /// <summary>
     /// The flight service.
@@ -34,9 +35,30 @@
         /// <returns>
         /// The <see cref="SearchFlightResponse"/>.
         /// </returns>
-        public SearchFlightResponse SearchFlight(SearchFlightRequest request)
+        public SearchResponseViewModel SearchFlight(SearchRequestViewModel request)
         {
-            return this.dataConsumerManager.SearchFlight(request);
+            var req = new SearchFlightRequest
+                          {
+                              ApiKey = AppSettings.SkyScannerApiKey,
+                              Currency = "GBP",
+                              Market = "GB",
+                              Locale = "en-GB",
+                              OriginPlace = request.Departure,
+                              OutboundPartialDate = request.DepartureDate.ToString("dd/mm/yyyy"),
+                              DestinationPlace = request.Arrival,
+                              InboundPartialDate = request.IsReturn ? request.ArrivalDate.ToString("dd/mm/yyyy") : string.Empty
+                          };
+
+            //var data = this.dataConsumerManager.SearchFlight(req);
+
+            var response = new SearchResponseViewModel();
+
+            //if (data != null)
+            //{
+            //    // fill response;
+            //}
+
+            return response;
         }
     }
 }

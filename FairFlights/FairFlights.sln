@@ -5,8 +5,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FairFlights.DataConsumer", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FairFlights.DomainObjects", "FairFlights.DomainObjects\FairFlights.DomainObjects.csproj", "{A32000F8-5005-471D-8135-1D36967A2BB5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication", "ConsoleApplication\ConsoleApplication.csproj", "{32285606-F1F3-4D30-A976-1225A6407F9F}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FairFlights.Configuration", "FairFlights.Configuration\FairFlights.Configuration.csproj", "{F8D435B4-8247-487D-A299-E37A00D85947}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FairFlights.Common", "FairFlights.Common\FairFlights.Common.csproj", "{507A4BEE-2C02-4DEA-BFE8-F9BF2FCA70BB}"
@@ -31,10 +29,6 @@ Global
 		{A32000F8-5005-471D-8135-1D36967A2BB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A32000F8-5005-471D-8135-1D36967A2BB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A32000F8-5005-471D-8135-1D36967A2BB5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{32285606-F1F3-4D30-A976-1225A6407F9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{32285606-F1F3-4D30-A976-1225A6407F9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{32285606-F1F3-4D30-A976-1225A6407F9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{32285606-F1F3-4D30-A976-1225A6407F9F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F8D435B4-8247-487D-A299-E37A00D85947}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F8D435B4-8247-487D-A299-E37A00D85947}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8D435B4-8247-487D-A299-E37A00D85947}.Release|Any CPU.ActiveCfg = Release|Any CPU

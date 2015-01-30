@@ -24,9 +24,9 @@
             <div class="col-xs-10">
                 <div class="input-group">
                     <span class="input-group-btn">
-                        <button type="button" class="btn btn-default">Date</button>
+                        <button id="departureDateBtn" type="button" class="btn btn-default">Date</button>
                     </span>
-                    <input type="text" class="form-control" ng-model="FormData.DepartureDate" placeholder="dd/mm/yy">
+                    <input id="departureDate" type="text" class="form-control" ng-model="FormData.DepartureDate" placeholder="yyyy-mm-dd">
                 </div>
             </div>
         </div>
@@ -34,7 +34,7 @@
         <div class="form-group">
             <div class="col-xs-offset-2 col-xs-10">
                 <div class="checkbox">
-                    <label><input type="checkbox" ng-model="FormData.IsReturn" ng-checked="FormData.IsReturn">Return</label>
+                    <label><input type="checkbox" ng-model="FormData.IsReturn" ng-checked="FormData.IsReturn; BindArrivalDatePicker()">Return</label>
                 </div>
             </div>
         </div>
@@ -43,9 +43,9 @@
             <div class="col-xs-10">
                 <div class="input-group">
                     <span class="input-group-btn">
-                        <button type="button" class="btn btn-default">Date</button>
+                        <button id="arrivalDateBtn" type="button" class="btn btn-default">Date</button>
                     </span>
-                    <input type="text" class="form-control" ng-disabled="!FormData.IsReturn" ng-model="FormData.ArrivalDate" placeholder="dd/mm/yy">
+                    <input id="arrivalDate" type="text" class="form-control" ng-disabled="!FormData.IsReturn" ng-model="FormData.ArrivalDate" placeholder="yyyy-mm-dd">
                 </div>
             </div>
         </div>

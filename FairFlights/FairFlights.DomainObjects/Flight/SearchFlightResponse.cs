@@ -6,6 +6,12 @@ namespace FairFlights.DomainObjects.Flight
 
     public class SearchFlightResponse
     {
+        [JsonProperty("Currencies")]
+        public List<FlightCurrency> FlightCurrencies { get; set; }
+
+        [JsonProperty("Dates")]
+        public List<FlightDate> FlightDates { get; set; }
+
         [JsonProperty("Quotes")]
         public List<FlightQuote> FlightQuotes { get; set; }
 
@@ -14,8 +20,5 @@ namespace FairFlights.DomainObjects.Flight
 
         [JsonProperty("Carriers")]
         public List<FlightCarrier> FlightCarriers { get; set; }
-
-        [JsonProperty("Currencies")]
-        public List<FlightCurrency> FlightCurrencies { get; set; }
     }
 }

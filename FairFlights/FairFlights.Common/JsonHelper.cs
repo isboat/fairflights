@@ -11,7 +11,7 @@
 
         public static string Serialize<T>(T input)
         {
-            return JsonConvert.SerializeObject(input);
+            return input == null ? null : JsonConvert.SerializeObject(input);
         }
     }
 }

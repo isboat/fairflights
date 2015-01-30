@@ -46,46 +46,19 @@
                               Market = "GB",
                               Locale = "en-GB",
                               OriginPlace = request.Departure,
-                              OutboundPartialDate = request.DepartureDate.ToString("dd/mm/yyyy"),
+                              OutboundPartialDate = request.DepartureDate.ToString("yyyy-MM-d"),
                               DestinationPlace = request.Arrival,
-                              InboundPartialDate = request.IsReturn ? request.ArrivalDate.ToString("dd/mm/yyyy") : string.Empty
+                              InboundPartialDate = request.IsReturn ? request.ArrivalDate.ToString("yyyy-MM-d") : string.Empty
                           };
 
-            // var data = this.dataConsumerManager.SearchFlight(req);
+            var data = this.dataConsumerManager.SearchFlight(req);
 
-            var response = new SearchResponseViewModel
-                               {
-                                   Currencies = new List<CurrencyViewModel>
-                                                    {
-                                                        new CurrencyViewModel
-                                                            {
-                                                                Code = "GBP",
-                                                                Symbol = '£',
-                                                                ThousandsSeparator = ',',
-                                                                DecimalDigits = 2,
-                                                                DecimalSeparator = ',',
-                                                                SymbolOnLeft = true,
-                                                                SpaceBetweenAmountAndSymbol = false,
-                                                                RoundingCoefficient = 0
-                                                            }
-                                                    },
-                                   Places = new List<PlaceViewModel>
-                                                 {
-                                                     new PlaceViewModel
-                                                         {
-                                                             PlaceId = 40074,
-                                                             IataCode = "ABZ",
-                                                             CityName = "Aberdeen",
-                                                             CountryName = "United Kingdom",
-                                                             PlaceType = "Station"
-                                                         }
-                                                 }
-                               };
+            var response = new SearchResponseViewModel();
 
-            //if (data != null)
-            //{
-            //    // fill response;
-            //}
+            if (data != null)
+            {
+                //fill response;
+            }
 
             return response;
         }

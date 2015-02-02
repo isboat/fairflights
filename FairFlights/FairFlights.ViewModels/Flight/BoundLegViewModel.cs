@@ -8,7 +8,7 @@ namespace FairFlights.ViewModels.Flight
 {
     public class BoundLegViewModel
     {
-        public int[] CarrierIds { get; set; }
+        public List<int> CarrierIds { get; set; }
 
         public int OriginId { get; set; }
 

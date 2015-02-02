@@ -14,7 +14,7 @@ namespace FairFlights.ViewModels.Flight
 
         public List<CarriersViewModel> Carriers { get; set; }
 
-        public List<DateViewModel> Dates { get; set; }
+        public DatesViewModel Dates { get; set; }
 
         public List<QuoteViewModel> Quotes { get; set; }
     }

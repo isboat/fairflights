@@ -8,6 +8,8 @@ namespace FairFlights.ViewModels.Flight
 {
     public class PlaceViewModel
     {
+        public string Name { get; set; }
+
         public int PlaceId { get; set; }
 
         public string IataCode { get; set; }

@@ -8,10 +8,10 @@ namespace FairFlights.DomainObjects.Flight
     /// <summary>
     /// The flight outbound leg.
     /// </summary>
-    public class FlightOutboundLeg
+    public class FlightBoundLeg
     {
-        [JsonProperty("CarriersIds")]
-        public int[] CarrierIds { get; set; }
+        [JsonProperty("CarrierIds")]
+        public List<int> CarrierIds { get; set; }
 
         [JsonProperty("OriginId")]
         public int OriginId { get; set; }

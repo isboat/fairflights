@@ -16,10 +16,10 @@ namespace FairFlights.DataConsumer.Suppliers
         public SearchFlightResponse SearchFlight(SearchFlightRequest request)
         {
             return JsonHelper.Deserialize<SearchFlightResponse>(Mock.Text);
-            // required fields
+             
+            //required fields
             
-            /*
-             if (request == null || string.IsNullOrEmpty(request.Market) || string.IsNullOrEmpty(request.Currency) || 
+            /*if (request == null || string.IsNullOrEmpty(request.Market) || string.IsNullOrEmpty(request.Currency) || 
                 string.IsNullOrEmpty(request.Locale) || string.IsNullOrEmpty(request.OriginPlace) || 
                 string.IsNullOrEmpty(request.DestinationPlace) || string.IsNullOrEmpty(request.OutboundPartialDate))
             {
@@ -40,26 +40,27 @@ namespace FairFlights.DataConsumer.Suppliers
 
             if (!string.IsNullOrEmpty(request.InboundPartialDate))
             {
-                uri += string.Format("{0}/", request.InboundPartialDate);
+                uri += string.Format("{0}", request.InboundPartialDate);
             }
 
             uri += string.Format("?apiKey={0}", AppSettings.SkyScannerApiKey);
 
-            var req = WebRequest.Create(uri);
+            var req = (HttpWebRequest)WebRequest.Create(uri);
             req.ContentType = "application/json";
             try
             {
-                var resp = (HttpWebResponse)req.GetResponse();
-                var respStream = resp.GetResponseStream();
-                if (respStream != null)
+                using (var resp = (HttpWebResponse)req.GetResponse())
                 {
-                    using (var sr = new StreamReader(respStream))
+                    var respStream = resp.GetResponseStream();
+                    if (respStream != null)
                     {
-                        var text = sr.ReadToEnd();
-                        if (!string.IsNullOrEmpty(text))
+                        using (var sr = new StreamReader(respStream))
                         {
-
-                            //response = JsonHelper.Deserialize<SearchFlightResponse>(text);
+                            var text = sr.ReadToEnd();
+                            if (!string.IsNullOrEmpty(text))
+                            {
+                                response = JsonHelper.Deserialize<SearchFlightResponse>(text);
+                            }
                         }
                     }
                 }
@@ -69,8 +70,8 @@ namespace FairFlights.DataConsumer.Suppliers
                 throw;
             }
 
-            return response;
-            */
+            return response;*/
+            
         }
 
         /*
@@ -133,111 +134,6 @@ namespace FairFlights.DataConsumer.Suppliers
     /// </summary>
     public static class Mock
     {
-        public const string Text = @"<BrowseDatesResponseApiDto>
-  <Currencies>
-    <CurrencyDto>
-      <Code>GBP</Code>
-      <Symbol>£</Symbol>
-      <ThousandsSeparator>,</ThousandsSeparator>
-      <DecimalSeparator>.</DecimalSeparator>
-      <SymbolOnLeft>true</SymbolOnLeft>
-      <SpaceBetweenAmountAndSymbol>false</SpaceBetweenAmountAndSymbol>
-      <RoundingCoefficient>0</RoundingCoefficient>
-      <DecimalDigits>2</DecimalDigits>
-    </CurrencyDto>
-  </Currencies>
-  <Dates>
-    <OutboundDates>
-      <DateDto>
-        <PartialDate>2015-02-03</PartialDate>
-        <QuoteIds>
-          <int>2</int>
-        </QuoteIds>
-        <Price>337</Price>
-      </DateDto>
-    </OutboundDates>
-    <InboundDates>
-      <DateDto>
-        <PartialDate>2015-02-05</PartialDate>
-        <QuoteIds>
-          <int>2</int>
-        </QuoteIds>
-        <Price>337</Price>
-      </DateDto>
-    </InboundDates>
-  </Dates>
-  <Quotes>
-    <QuoteDto>
-      <QuoteId>1</QuoteId>
-      <MinPrice>216</MinPrice>
-      <Direct>true</Direct>
-      <InboundLeg>
-        <CarrierIds>
-          <int>1001</int>
-        </CarrierIds>
-        <OriginId>60987</OriginId>
-        <DestinationId>65655</DestinationId>
-        <DepartureDate>2015-02-05T00:00:00</DepartureDate>
-      </InboundLeg>
-    </QuoteDto>
-    <QuoteDto>
-      <QuoteId>2</QuoteId>
-      <MinPrice>337</MinPrice>
-      <Direct>true</Direct>
-      <OutboundLeg>
-        <CarrierIds>
-          <int>1333</int>
-        </CarrierIds>
-        <OriginId>65698</OriginId>
-        <DestinationId>60987</DestinationId>
-        <DepartureDate>2015-02-03T00:00:00</DepartureDate>
-      </OutboundLeg>
-      <InboundLeg>
-        <CarrierIds>
-          <int>1333</int>
-        </CarrierIds>
-        <OriginId>60987</OriginId>
-        <DestinationId>65698</DestinationId>
-        <DepartureDate>2015-02-05T00:00:00</DepartureDate>
-      </InboundLeg>
-    </QuoteDto>
-  </Quotes>
-  <Places>
-    <PlaceDto>
-      <PlaceId>60987</PlaceId>
-      <IataCode>JFK</IataCode>
-      <Name>New York John F. Kennedy</Name>
-      <Type>Station</Type>
-      <CityName>New York</CityName>
-      <CountryName>United States</CountryName>
-    </PlaceDto>
-    <PlaceDto>
-      <PlaceId>65655</PlaceId>
-      <IataCode>LGW</IataCode>
-      <Name>London Gatwick</Name>
-      <Type>Station</Type>
-      <CityName>London</CityName>
-      <CountryName>United Kingdom</CountryName>
-    </PlaceDto>
-    <PlaceDto>
-      <PlaceId>65698</PlaceId>
-      <IataCode>LHR</IataCode>
-      <Name>London Heathrow</Name>
-      <Type>Station</Type>
-      <CityName>London</CityName>
-      <CountryName>United Kingdom</CountryName>
-    </PlaceDto>
-  </Places>
-  <Carriers>
-    <CarriersDto>
-      <CarrierId>1001</CarrierId>
-      <Name>Norwegian</Name>
-    </CarriersDto>
-    <CarriersDto>
-      <CarrierId>1333</CarrierId>
-      <Name>Kuwait Airways</Name>
-    </CarriersDto>
-  </Carriers>
-</BrowseDatesResponseApiDto>";
+        public const string Text = "{'Dates':{'OutboundDates':[{'PartialDate':'2015-02-03','QuoteIds':[1,2],'Price':340.0}],'InboundDates':[{'PartialDate':'2015-02-05','QuoteIds':[2,3],'Price':340.0}]},'Quotes':[{'QuoteId':1,'MinPrice':269.0,'Direct':true,'OutboundLeg':{'CarrierIds':[1001],'OriginId':65655,'DestinationId':60987,'DepartureDate':'2015-02-03T00:00:00'}},{'QuoteId':2,'MinPrice':340.0,'Direct':true,'OutboundLeg':{'CarrierIds':[1333],'OriginId':65698,'DestinationId':60987,'DepartureDate':'2015-02-03T00:00:00'},'InboundLeg':{'CarrierIds':[1333],'OriginId':60987,'DestinationId':65698,'DepartureDate':'2015-02-05T00:00:00'}},{'QuoteId':3,'MinPrice':215.0,'Direct':true,'InboundLeg':{'CarrierIds':[1001],'OriginId':60987,'DestinationId':65655,'DepartureDate':'2015-02-05T00:00:00'}}],'Places':[{'PlaceId':60987,'IataCode':'JFK','Name':'New York John F. Kennedy','Type':'Station','CityName':'New York','CountryName':'United States'},{'PlaceId':65655,'IataCode':'LGW','Name':'London Gatwick','Type':'Station','CityName':'London','CountryName':'United Kingdom'},{'PlaceId':65698,'IataCode':'LHR','Name':'London Heathrow','Type':'Station','CityName':'London','CountryName':'United Kingdom'}],'Carriers':[{'CarrierId':1001,'Name':'Norwegian'},{'CarrierId':1333,'Name':'Kuwait Airways'}],'Currencies':[{'Code':'GBP','Symbol':'£','ThousandsSeparator':',','DecimalSeparator':'.','SymbolOnLeft':true,'SpaceBetweenAmountAndSymbol':false,'RoundingCoefficient':0,'DecimalDigits':2}]}";
     }
 }

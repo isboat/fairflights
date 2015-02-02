@@ -12,4 +12,4 @@ namespace FairFlights.DomainObjects.Flight
 
         public string Name { get; set; }
     }
-}
+}   

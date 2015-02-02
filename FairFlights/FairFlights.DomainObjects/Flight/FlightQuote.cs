@@ -14,6 +14,9 @@
         public bool IsDirect { get; set; }
 
         [JsonProperty("OutboundLeg")]
-        public FlightOutboundLeg OutboundLeg { get; set; }
+        public FlightBoundLeg OutboundLeg { get; set; }
+
+        [JsonProperty("InboundLeg")]
+        public FlightBoundLeg InboundLeg { get; set; }
     }
 }

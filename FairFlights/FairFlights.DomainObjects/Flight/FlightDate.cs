@@ -8,15 +8,24 @@ namespace FairFlights.DomainObjects.Flight
 {
     using Newtonsoft.Json;
 
+    public class FlightDates
+    {
+        [JsonProperty("OutboundDates")]
+        public List<FlightDate> OutboundDates { get; set; }
+
+        [JsonProperty("InboundDates")]
+        public List<FlightDate> InboundDates { get; set; }
+    }
+
     public class FlightDate
     {
         [JsonProperty("PartialDate")]
         public DateTime PartialDate { get; set; }
 
-        [JsonProperty("QuotesIds")]
+        [JsonProperty("QuoteIds")]
         public List<int> QouteIds { get; set; }
 
         [JsonProperty("Price")]
-        public int Price { get; set; }
+        public decimal Price { get; set; }
     }
 }

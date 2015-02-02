@@ -46,7 +46,7 @@
     <Compile Include="Flight\FlightCarrier.cs" />
     <Compile Include="Flight\FlightCurrency.cs" />
     <Compile Include="Flight\FlightDate.cs" />
-    <Compile Include="Flight\FlightOutboundLeg.cs" />
+    <Compile Include="Flight\FlightBoundLeg.cs" />
     <Compile Include="Flight\FlightPlace.cs" />
     <Compile Include="Flight\FlightQuote.cs" />
     <Compile Include="Flight\FlightType.cs" />

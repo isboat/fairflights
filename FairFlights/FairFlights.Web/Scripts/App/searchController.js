@@ -48,10 +48,11 @@ ffApp.controller('searchController', function searchController($rootScope, $scop
     
     $scope.SubmitForm = function() {
         console.log($scope.FormData);
-
+        uiHelper.ShowBusy();
         flightService.SearchFlight($scope.FormData).then(
             function(data) {
                 if (data) {
+                    uiHelper.HideBusy();
                     //redirect to graph page
                     $location.path('/view');
                     console.log(data);

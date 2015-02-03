@@ -5,9 +5,6 @@ ffApp.controller('searchController', function searchController($rootScope, $scop
     $scope.Message = "Message from searchController";
     $scope.FormData = {
         IsReturn : false,
-        OverTwelve: 1,
-        UnderTwelve: 0,
-        UnderTwo: 0,
         CabinClass: 'Economy'
     };
     

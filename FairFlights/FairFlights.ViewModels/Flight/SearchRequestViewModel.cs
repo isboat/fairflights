@@ -22,11 +22,5 @@ namespace FairFlights.ViewModels.Flight
         public DateTime DepartureDate { get; set; }
 
         public string CabinClass { get; set; }
-
-        public int OverTwelve { get; set; }
-
-        public int UnderTwelve { get; set; }
-
-        public int UnderTwo { get; set; }
     }
 }

@@ -46,9 +46,9 @@
                               Market = "GB",
                               Locale = "en-GB",
                               OriginPlace = request.Departure,
-                              OutboundPartialDate = request.DepartureDate.ToString("yyyy-MM-d"),
+                              OutboundPartialDate = request.DepartureDate.ToString("yyyy-MM-dd"),
                               DestinationPlace = request.Arrival,
-                              InboundPartialDate = request.IsReturn ? request.ArrivalDate.ToString("yyyy-MM-d") : string.Empty
+                              InboundPartialDate = request.IsReturn ? request.ArrivalDate.ToString("yyyy-MM-dd") : string.Empty
                           };
 
             var data = this.dataConsumerManager.SearchFlight(req);
@@ -57,7 +57,7 @@
                                {
                                    Carriers = new List<CarriersViewModel>(),
                                    Currencies = new List<CurrencyViewModel>(),
-                                   Dates = new DatesViewModel(),
+                                   Dates = new DatesViewModel { InboundDates = new List<DateViewModel>(), OutboundDates = new List<DateViewModel>()},
                                    Places = new List<PlaceViewModel>(),
                                    Quotes = new List<QuoteViewModel>()
                                };
@@ -124,27 +124,35 @@
 
                 foreach (var flightQuote in data.FlightQuotes)
                 {
-                    response.Quotes.Add(
-                        new QuoteViewModel
-                            {
-                                InboundLeg = new BoundLegViewModel
-                                                    {
-                                                        CarrierIds = flightQuote.InboundLeg.CarrierIds,
-                                                        DepartureDate = flightQuote.InboundLeg.DepartureDate,
-                                                        DestinationId = flightQuote.InboundLeg.DestinationId,
-                                                        OriginId = flightQuote.InboundLeg.OriginId
-                                                    },
-                                OutboundLeg = new BoundLegViewModel
-                                                  {
-                                                      CarrierIds = flightQuote.OutboundLeg.CarrierIds,
-                                                      DepartureDate = flightQuote.OutboundLeg.DepartureDate,
-                                                      DestinationId = flightQuote.OutboundLeg.DestinationId,
-                                                      OriginId = flightQuote.OutboundLeg.OriginId
-                                                  },
-                                IsDirect = flightQuote.IsDirect,
-                                MinPrice = flightQuote.MinPrice,
-                                QuoteId = flightQuote.QuoteId
-                            });
+                    var q = new QuoteViewModel
+                        {
+                            IsDirect = flightQuote.IsDirect,
+                            MinPrice = flightQuote.MinPrice,
+                            QuoteId = flightQuote.QuoteId
+                        };
+
+                    if (flightQuote.InboundLeg != null)
+                    {
+                        q.InboundLeg = new BoundLegViewModel 
+                                    {
+                                        CarrierIds = flightQuote.InboundLeg.CarrierIds,
+                                        DepartureDate = flightQuote.InboundLeg.DepartureDate,
+                                        DestinationId = flightQuote.InboundLeg.DestinationId,
+                                        OriginId = flightQuote.InboundLeg.OriginId
+                                    };
+                    }
+
+                    if (flightQuote.OutboundLeg != null)
+                    {
+                        q.OutboundLeg = new BoundLegViewModel
+                                    {
+                                        CarrierIds = flightQuote.OutboundLeg.CarrierIds,
+                                        DepartureDate = flightQuote.OutboundLeg.DepartureDate,
+                                        DestinationId = flightQuote.OutboundLeg.DestinationId,
+                                        OriginId = flightQuote.OutboundLeg.OriginId
+                                    };
+                    }
+                    response.Quotes.Add(q);
                 }
             }
 

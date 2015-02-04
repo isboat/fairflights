@@ -1,5 +1,6 @@
 ﻿namespace FairFlights.DomainServices
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using FairFlights.Configuration;
@@ -46,10 +47,16 @@
                               Market = "GB",
                               Locale = "en-GB",
                               OriginPlace = request.Departure,
-                              OutboundPartialDate = request.DepartureDate.ToString("yyyy-MM-dd"),
-                              DestinationPlace = request.Arrival,
-                              InboundPartialDate = request.IsReturn ? request.ArrivalDate.ToString("yyyy-MM-dd") : string.Empty
+                              OutboundPartialDate = request.DateRange == DateRange.CustomDateRange ? request.DepartureDate.ToString("yyyy-MM-dd") : this.DateRangeToString(request.DateRange),
+                              DestinationPlace = request.Arrival
                           };
+
+            if (request.IsReturn)
+            {
+                req.InboundPartialDate = request.DateRange == DateRange.CustomDateRange
+                                             ? request.ArrivalDate.ToString("yyyy-MM-dd")
+                                             : DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd");
+            }
 
             var data = this.dataConsumerManager.SearchFlight(req);
 
@@ -64,7 +71,6 @@
 
             if (data != null)
             {
-                //fill response;
                 foreach (var carrier in data.FlightCarriers)
                 {
                     response.Carriers.Add(new CarriersViewModel { CarrierId = carrier.CarrierId, Name = carrier.Name});
@@ -157,6 +163,23 @@
             }
 
             return response;
+        }
+
+        private string DateRangeToString(DateRange range)
+        {
+            switch (range)
+            {
+                case DateRange.LastYear:
+                    return DateTime.Now.AddYears(-1).ToString("yyyy-MM-dd");
+                case DateRange.LastSixMonths:
+                    return DateTime.Now.AddMonths(-6).ToString("yyyy-MM-dd");
+                case DateRange.LastThreeMonths:
+                    return DateTime.Now.AddMonths(-3).ToString("yyyy-MM-dd");
+                case DateRange.LastMonth:
+                    return DateTime.Now.AddMonths(-1).ToString("yyyy-MM-dd");
+                default:
+                    return string.Empty;
+            }
         }
     }
 }

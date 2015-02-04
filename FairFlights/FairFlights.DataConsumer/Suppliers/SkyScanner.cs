@@ -15,11 +15,11 @@ namespace FairFlights.DataConsumer.Suppliers
     {
         public SearchFlightResponse SearchFlight(SearchFlightRequest request)
         {
-            return JsonHelper.Deserialize<SearchFlightResponse>(Mock.Text);
+           // return JsonHelper.Deserialize<SearchFlightResponse>(Mock.Text);
              
             //required fields
             
-            /*if (request == null || string.IsNullOrEmpty(request.Market) || string.IsNullOrEmpty(request.Currency) || 
+            if (request == null || string.IsNullOrEmpty(request.Market) || string.IsNullOrEmpty(request.Currency) || 
                 string.IsNullOrEmpty(request.Locale) || string.IsNullOrEmpty(request.OriginPlace) || 
                 string.IsNullOrEmpty(request.DestinationPlace) || string.IsNullOrEmpty(request.OutboundPartialDate))
             {
@@ -70,7 +70,7 @@ namespace FairFlights.DataConsumer.Suppliers
                 throw;
             }
 
-            return response;*/
+            return response;
             
         }
 

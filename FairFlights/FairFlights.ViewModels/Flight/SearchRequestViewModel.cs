@@ -15,12 +15,12 @@ namespace FairFlights.ViewModels.Flight
 
         public DateTime ArrivalDate { get; set; }
 
-        public bool IsReturn { get; set; }
+        public DateRange DateRange { get; set; }
 
         public string Departure { get; set; }
 
         public DateTime DepartureDate { get; set; }
 
-        public string CabinClass { get; set; }
+        public bool IsReturn { get; set; }
     }
 }

@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Flight\CarriersViewModel.cs" />
     <Compile Include="Flight\CurrencyViewModel.cs" />
+    <Compile Include="Flight\DateRange.cs" />
     <Compile Include="Flight\DatesViewModel.cs" />
     <Compile Include="Flight\BoundLegViewModel.cs" />
     <Compile Include="Flight\QuoteViewModel.cs" />

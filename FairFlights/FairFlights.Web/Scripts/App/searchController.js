@@ -4,13 +4,12 @@ ffApp.controller('searchController', function searchController($rootScope, $scop
 
     $scope.Message = "Message from searchController";
     $scope.FormData = {
-        IsReturn : false,
-        CabinClass: 'Economy'
+        DateRange: '1'
     };
     
     // Event bindings
     (function () {
-        $('.classGroup').chosen();
+        $('.dateRange_chosen').chosen();
     
         var $datepicker = $('#departureDate').pikaday({
             firstDay: 1,
@@ -21,27 +20,21 @@ ffApp.controller('searchController', function searchController($rootScope, $scop
         $('#departureDateBtn').click(function () {
             $datepicker.pikaday('show');
         });
+        
+        var ad = $('#arrivalDate').pikaday({
+            firstDay: 1,
+            minDate: new Date('2000-01-01'),
+            maxDate: new Date('2020-12-31'),
+            yearRange: [2000, 2020]
+        });
+            
+        $('#arrivalDateBtn').click(function () {
+            ad.pikaday('show');
+        });
+        
     })();
 
     // public functions
-    $scope.BindArrivalDatePicker = function () {
-        if ($scope.FormData.IsReturn) {
-
-            var ad = $('#arrivalDate').pikaday({
-                firstDay: 1,
-                minDate: new Date('2000-01-01'),
-                maxDate: new Date('2020-12-31'),
-                yearRange: [2000, 2020]
-            });
-            
-            $('#arrivalDateBtn').click(function () {
-                ad.pikaday('show');
-            });
-
-        } else {
-            $('#arrivalDate').val('');
-        }
-    };
     
     $scope.SubmitForm = function() {
         console.log($scope.FormData);

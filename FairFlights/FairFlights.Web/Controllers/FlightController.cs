@@ -3,6 +3,7 @@
 namespace FairFlights.Web.Controllers
 {
     using System.Net;
+    using System.Security.AccessControl;
 
     using FairFlights.Configuration;
     using FairFlights.DomainServices.Interfaces;
@@ -16,6 +17,7 @@ namespace FairFlights.Web.Controllers
 
         private readonly IFlightService flightService;
 
+        private readonly IPredictionService predictionService;
         #endregion
 
         #region Constructors
@@ -23,6 +25,7 @@ namespace FairFlights.Web.Controllers
         public FlightController()
         {
             this.flightService = IoC.GetInstance.Resolve<IFlightService>();
+            this.predictionService = IoC.GetInstance.Resolve<IPredictionService>();
         }
         #endregion
 
@@ -31,6 +34,7 @@ namespace FairFlights.Web.Controllers
         {
             if (viewModel != null)
             {
+                this.predictionService.PredictPrice(viewModel);
                 return this.flightService.SearchFlight(viewModel);
             }
 

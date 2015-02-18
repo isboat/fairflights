@@ -41,6 +41,8 @@
   <ItemGroup>
     <Compile Include="FlightService.cs" />
     <Compile Include="Interfaces\IFlightService.cs" />
+    <Compile Include="Interfaces\IPredictionService.cs" />
+    <Compile Include="PredictionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

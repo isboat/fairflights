@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FairFlights.DataConsumer", "FairFlights.DataConsumer\FairFlights.DataConsumer.csproj", "{35CB1CE6-2CFD-4F8E-83B3-94562EEEDCD9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FairFlights.DomainObjects", "FairFlights.DomainObjects\FairFlights.DomainObjects.csproj", "{A32000F8-5005-471D-8135-1D36967A2BB5}"
@@ -14,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FairFlights.Web", "FairFlights.Web\FairFlights.Web.csproj", "{196B590E-CA3E-44F5-A284-68382030837D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FairFlights.ViewModels", "FairFlights.ViewModels\FairFlights.ViewModels.csproj", "{4ACE9806-3CB6-4592-BD7D-67F5ABE6CA48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FairFlights.PredictionEngine", "FairFlights.PredictionEngine\FairFlights.PredictionEngine.csproj", "{5DACE33B-3108-4673-91DE-9B14149868EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +53,10 @@ Global
 		{4ACE9806-3CB6-4592-BD7D-67F5ABE6CA48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4ACE9806-3CB6-4592-BD7D-67F5ABE6CA48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4ACE9806-3CB6-4592-BD7D-67F5ABE6CA48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DACE33B-3108-4673-91DE-9B14149868EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DACE33B-3108-4673-91DE-9B14149868EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DACE33B-3108-4673-91DE-9B14149868EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DACE33B-3108-4673-91DE-9B14149868EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

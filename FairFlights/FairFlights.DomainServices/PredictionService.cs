@@ -13,7 +13,6 @@ namespace FairFlights.DomainServices
     {
         public void PredictPrice(SearchRequestViewModel searchRequest)
         {
-            
         }
     }
 }

@@ -10,8 +10,8 @@ var UIHelper = function () {
 
         $($el).prepend('<div class="loading"></div>');
         $('.loading').css({
-            width: $($el).css('width'),
-            height: $($el).css('height')
+            width: $el === 'body' ? $(window).width() : $($el).css('width'),
+            height: $el === 'body' ? $(window).height() : $($el).css('height')
         });
         this.IsLoading = true;
     };

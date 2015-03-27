@@ -3,6 +3,7 @@
 ffApp.controller('searchController', function searchController($rootScope, $scope, $location, flightService) {
 
     $scope.Message = "Message from searchController";
+    $scope.Advanced = false;
     $scope.FormData = {
         DateRange: '1'
     };
@@ -10,6 +11,9 @@ ffApp.controller('searchController', function searchController($rootScope, $scop
     // Event bindings
     (function () {
         $('.dateRange_chosen').chosen();
+        $('.transits_chosen').chosen();
+        $('.fClass_chosen').chosen();
+        $('.nPassengers_chosen').chosen();
     
         var $datepicker = $('#departureDate').pikaday({
             firstDay: 1,
@@ -30,14 +34,6 @@ ffApp.controller('searchController', function searchController($rootScope, $scop
             
         $('#arrivalDateBtn').click(function () {
             ad.pikaday('show');
-        });
-        
-        $('#advanced-filters').click(function () {
-            if ($(this).is(':checked')) {
-                $(".advanced-filter-list").show();
-            } else {
-                $(".advanced-filter-list").hide();
-            }
         });
     })();
 

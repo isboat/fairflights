@@ -7,31 +7,31 @@
         
         
         <form class="form-horizontal">
-        <div class="form-group has-success">
-            <label for="departure" class="control-label col-xs-3">From</label>
-            <div class="col-xs-9">
-                <input type="text" class="form-control" id="departure" ng-model="FormData.Departure" placeholder="London city">
+            <div class="form-group has-success">
+                <label for="departure" class="control-label col-xs-3">From</label>
+                <div class="col-xs-9">
+                    <input type="text" class="form-control" id="departure" ng-model="FormData.Departure" placeholder="London city">
+                </div>
             </div>
-        </div>
-        <div class="form-group has-warning">
-            <label for="arrival" class="control-label col-xs-3">To</label>
-            <div class="col-xs-9">
-                <input type="text" class="form-control" id="arrival" ng-model="FormData.Arrival" placeholder="London city">
+            <div class="form-group has-warning">
+                <label for="arrival" class="control-label col-xs-3">To</label>
+                <div class="col-xs-9">
+                    <input type="text" class="form-control" id="arrival" ng-model="FormData.Arrival" placeholder="London city">
+                </div>
             </div>
-        </div>
-        <div class="form-group has-error">
-            <label for="aDate" class="control-label col-lg-3">Date Range</label>
-            <div class="col-xs-9">
-                <select class="dateRange_chosen" ng-model="FormData.DateRange">
-                    <option value="1">Last Year</option>
-                    <option value="2">Last 6 Month</option>
-                    <option value="3">Last 3 Month</option>
-                    <option value="4">Last Month</option>
-                    <option value="5">Custom Date Range</option>
-                </select>
+            <div class="form-group has-error">
+                <label for="aDate" class="control-label col-lg-3">Date Range</label>
+                <div class="col-xs-9">
+                    <select class="dateRange_chosen" ng-model="FormData.DateRange">
+                        <option value="1">Last Year</option>
+                        <option value="2">Last 6 Month</option>
+                        <option value="3">Last 3 Month</option>
+                        <option value="4">Last Month</option>
+                        <option value="5">Custom Date Range</option>
+                    </select>
+                </div>
             </div>
-        </div>
-        <div ng-show="FormData.DateRange == '5'">
+            <div ng-show="FormData.DateRange == '5'">
                     <label for="dDate" class="control-label col-xs-3">Depart</label>
                     <div class="col-xs-3">
                         <div class="input-group">
@@ -44,49 +44,58 @@
                             <input id="arrivalDate" type="text" class="form-control" ng-model="FormData.ArrivalDate" placeholder="yyyy-mm-dd">
                         </div>
                     </div>
+                </div>
+
+            <div class="advanceSection"></div>
+            
+            <div class="form-group has-success">
+                <label for="advanced-filters" class="control-label col-xs-3">Advanced Search</label>
+                <div class="col-xs-9">
+                    <input type="checkbox" id="advanced-filters" ng-model="Advanced">
+                </div>
+            </div>
+            
+            <div class="form-group has-warning" ng-show="Advanced">
+                <label for="nTransits" class="control-label col-xs-3">Transits</label>
+                <div class="col-xs-9">
+                    <select id="nTransits" class="transits_chosen">
+                        <option value="1"> 1 </option>
+                        <option selected="selected" value="2"> 2 </option>
+                        <option value="3"> 3 </option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-group has-error" ng-show="Advanced">
+                <label for="fClass" class="control-label col-xs-3">Flight Class</label>
+                <div class="col-xs-9">
+                    <select id="fClass" class="fClass_chosen">
+                        <option value="first"> First Class </option>
+                        <option value="business"> Business Class </option>
+                        <option selected="selected" value="economy"> Economy Class </option>
+                        <option value="premium"> Premium Economy </option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-group has-success" ng-show="Advanced">
+                <label for="nPassengers" class="control-label col-xs-3">Passengers</label>
+                <div class="col-xs-9">
+                    <select id="nPassengers" disabled class="nPassengers_chosen">
+                        <option selected="selected" value="one">1</option>
+                        <option value="two">2</option>
+                        <option value="family">3 to 5</option>
+                        <option value="tourist">More than 5</option>
+                    </select>
+                </div>
             </div>
 
-            <section class="advanced-filter" > 
-                <label for="dDate" class="control-label col-xs-3">Advance your search</label>
-                <input type="checkbox" id="advanced-filters"><p>
-
-                <fieldset class="cols-nested advanced-filter-list">
-                    <label for="nTransits">
-                        Transits
-                        <select id="nTransits">
-                            <option value="1"> 1 </option>
-                            <option selected="selected" value="2"> 2 </option>
-                            <option value="3"> 3 </option>
-                        </select>
-                    </label><br />
-                    <label for="fClass">
-                        Flight Class
-                        <select id="fClass">
-                            <option value="first"> First Class </option>
-                            <option value="business"> Business Class </option>
-                            <option selected="selected" value="economy"> Economy Class </option>
-                            <option value="premium"> Premium Economy </option>
-                        </select>
-                    </label><br />
-                    <label for="nPassengers">
-                        Passengers
-                        <select id="nPassengers" disabled>
-                            <option selected="selected" value="one">1</option>
-                            <option value="two">2</option>
-                            <option value="family">3 to 5</option>
-                            <option value="tourist">More than 5</option>
-                        </select>
-                    </label>
-                </fieldset>  
-               </section>
-
-
-        <div></div><div class="form-group">
-            <div class="col-xs-offset-2 col-xs-10"><br />
-            <br />
-                <button type="submit" class="btn btn-success" ng-click="SubmitForm()">View Price Graph</button>
+            <div></div><div class="form-group">
+                <div class="col-xs-offset-2 col-xs-10"><br />
+                <br />
+                    <button type="submit" class="btn btn-success" ng-click="SubmitForm()">View Price Graph</button>
+                </div>
             </div>
-        </div>
         </form>
     </div>
 </div>

@@ -31,20 +31,20 @@
                     </select>
                 </div>
             </div>
-            <div ng-show="FormData.DateRange == '5'">
-                    <label for="dDate" class="control-label col-xs-3">Depart</label>
-                    <div class="col-xs-3">
-                        <div class="input-group">
-                            <input id="departureDate" type="text" class="form-control" ng-model="FormData.DepartureDate" placeholder="yyyy-mm-dd">
-                        </div>
-                    </div>
-                    <label for="aDate" class="col-xs-3">Arrive</label>
-                    <div class="col-xs-3">
-                        <div class="input-group">
-                            <input id="arrivalDate" type="text" class="form-control" ng-model="FormData.ArrivalDate" placeholder="yyyy-mm-dd">
-                        </div>
+            <div ng-show="FormData.DateRange == '5'" class="form-group has-warning">
+                <label for="dDate" class="control-label col-xs-3">Depart</label>
+                <div class="col-xs-3">
+                    <div class="input-group">
+                        <input id="departureDate" type="text" class="form-control" ng-model="FormData.DepartureDate" placeholder="yyyy-mm-dd">
                     </div>
                 </div>
+                <label for="aDate" class="col-xs-3">Arrive</label>
+                <div class="col-xs-3">
+                    <div class="input-group">
+                        <input id="arrivalDate" type="text" class="form-control" ng-model="FormData.ArrivalDate" placeholder="yyyy-mm-dd">
+                    </div>
+                </div>
+            </div>
 
             <div class="advanceSection"></div>
             

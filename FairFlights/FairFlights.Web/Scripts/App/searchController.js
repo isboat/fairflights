@@ -32,6 +32,13 @@ ffApp.controller('searchController', function searchController($rootScope, $scop
             ad.pikaday('show');
         });
         
+        $('#advanced-filters').click(function () {
+            if ($(this).is(':checked')) {
+                $(".advanced-filter-list").show();
+            } else {
+                $(".advanced-filter-list").hide();
+            }
+        });
     })();
 
     // public functions

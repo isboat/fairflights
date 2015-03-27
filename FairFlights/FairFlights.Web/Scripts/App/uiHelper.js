@@ -21,4 +21,5 @@ var UIHelper = function () {
     };
 };
 
+
 var uiHelper = new UIHelper();
